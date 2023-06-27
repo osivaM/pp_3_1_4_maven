@@ -126,8 +126,11 @@
                                                                     <input class="form-control" type="number"
                                                                            th:value="*{age}" th:name="age"
                                                                            id="updateAge"/>
-                                                                    <input type="hidden" th:value="*{password}"
-                                                                           th:name="password"/>
+                                                                    <b>
+                                                                        <label for="updatePassword">Password:</label>
+                                                                    </b>
+                                                                    <input type="text"
+                                                                           th:name="password" id="updatePassword"/>
                                                                     <br/>
                                                                     <p>
                                                                         <b>
@@ -135,7 +138,8 @@
                                                                         </b>
                                                                         <select class="form-control" size="2"
                                                                                 id="updateRoles" name="role"
-                                                                                th:value="*{roles}" th:name="roles">
+                                                                                multiple th:value="*{roles}"
+                                                                                th:name="roles">
                                                                             <option th:each="role: ${roles}"
                                                                                     th:text="${role.role}"
                                                                                     th:value="${role.id}"></option>
@@ -199,7 +203,7 @@
                                                 <label for="role">Role</label>
                                             </b>
                                             <select class="form-control" size="2" id="role" name="role"
-                                                    th:field="*{roles}">
+                                                    multiple th:field="*{roles}">
                                                 <option th:each="role: ${roles}" th:text="${role.role}"
                                                         th:value="${role.id}"></option>
                                             </select>
